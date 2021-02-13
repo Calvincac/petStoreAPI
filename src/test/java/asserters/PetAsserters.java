@@ -10,13 +10,18 @@ import static org.hamcrest.Matchers.*;
 public class PetAsserters {
 
     public static void assertPet(Pet expected, Pet actual) {
-        assertThat(expected.getCategory().getId(), equalTo(actual.getCategory().getId()));
-        assertThat(expected.getCategory().getName(), equalTo(actual.getCategory().getName()));
+        if(expected.getCategory() != null){
+            assertThat(expected.getCategory().getId(), equalTo(actual.getCategory().getId()));
+            assertThat(expected.getCategory().getName(), equalTo(actual.getCategory().getName()));
+        }
+
+        if(expected.getTags() != null){
+            assertTags(expected.getTags(), actual.getTags());
+        }
         assertThat(expected.getId(), equalTo(actual.getId()));
         assertThat(expected.getName(), equalTo(actual.getName()));
         assertThat(expected.getStatus(), equalTo(actual.getStatus()));
         assertThat(expected.getPhotoUrls(), equalTo(actual.getPhotoUrls()));
-        assertTags(expected.getTags(), actual.getTags());
     }
 
     public static void assertTags(List<Tag> expectedTags, List<Tag> actualTags) {
