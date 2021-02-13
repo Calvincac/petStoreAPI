@@ -1,15 +1,11 @@
 package client;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojo.Pet;
 import resources.PetStoreResources;
 import resources.Utils;
 
-import java.io.IOException;
-
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 
 public class PetClient implements AbstractRequest{
     Utils utils = new Utils();
@@ -26,8 +22,13 @@ public class PetClient implements AbstractRequest{
     }
 
     @Override
-    public Response deletePet() {
-        return null;
+    public Response deletePet(Integer petId) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .delete(PetStoreResources.PET.getResource() + String.valueOf(petId));
     }
 
     @Override

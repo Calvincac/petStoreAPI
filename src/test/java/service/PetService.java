@@ -18,4 +18,24 @@ public class PetService extends PetClient {
                 .extract()
                 .as(Pet.class);
     }
+
+    public Response deleteAPet(Integer petId) {
+        return  deletePet(petId)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .response();
+    }
+
+    public Response deleteAPetNotFound(Integer petId) {
+        return  deletePet(petId)
+                .then()
+                .log()
+                .all()
+                .statusCode(404)
+                .extract()
+                .response();
+    }
 }

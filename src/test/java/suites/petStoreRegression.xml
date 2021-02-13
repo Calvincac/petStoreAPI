@@ -4,6 +4,9 @@
     <test name="Pet Store Tests" annotations="JDK" preserve-order="true">
         <classes>
             <class name="tests.pets.AddPetTests"></class>
+            <class name="tests.pets.DeletePetTests"></class>
+            <class name="tests.pets.UpdatePetTests"></class>
+            <class name="tests.pets.GetPetTests"></class>
         </classes>
     </test>
 </suite>

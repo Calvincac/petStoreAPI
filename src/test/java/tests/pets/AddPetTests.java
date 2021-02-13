@@ -57,4 +57,13 @@ public class AddPetTests extends PetService {
         Pet petResponse = addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
+
+    @Test
+    public void canAdd50PetsOneAfterAnother() {
+        for (int i = 0; i < 50; i++) {
+            Pet pet = data.getPetAllFields();
+            Pet petResponse = addPet(pet);
+            assertPet(pet, petResponse);
+        }
+    }
 }

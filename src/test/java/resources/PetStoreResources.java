@@ -1,7 +1,7 @@
 package resources;
 
 public enum PetStoreResources {
-    PET("/pet");
+    PET("/pet/");
 
 
     private String resource;
