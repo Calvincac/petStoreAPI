@@ -1,0 +1,28 @@
+package asserters;
+
+import pojo.Pet;
+import pojo.Tag;
+
+import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+public class PetAsserters {
+
+    public static void assertPet(Pet expected, Pet actual) {
+        assertThat(expected.getCategory().getId(), equalTo(actual.getCategory().getId()));
+        assertThat(expected.getCategory().getName(), equalTo(actual.getCategory().getName()));
+        assertThat(expected.getId(), equalTo(actual.getId()));
+        assertThat(expected.getName(), equalTo(actual.getName()));
+        assertThat(expected.getStatus(), equalTo(actual.getStatus()));
+        assertThat(expected.getPhotoUrls(), equalTo(actual.getPhotoUrls()));
+        assertTags(expected.getTags(), actual.getTags());
+    }
+
+    public static void assertTags(List<Tag> expectedTags, List<Tag> actualTags) {
+        for(int i=0; i<expectedTags.size();i++) {
+            assertThat(expectedTags.get(i).getId(), equalTo(actualTags.get(i).getId()));
+            assertThat(expectedTags.get(i).getName(), equalTo(actualTags.get(i).getName()));
+        }
+    }
+}
