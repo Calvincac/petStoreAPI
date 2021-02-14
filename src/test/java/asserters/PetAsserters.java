@@ -1,6 +1,7 @@
 package asserters;
 
 import pojo.Pet;
+import pojo.Status;
 import pojo.Tag;
 
 import java.util.List;
@@ -29,5 +30,11 @@ public class PetAsserters {
             assertThat(expectedTags.get(i).getId(), equalTo(actualTags.get(i).getId()));
             assertThat(expectedTags.get(i).getName(), equalTo(actualTags.get(i).getName()));
         }
+    }
+
+    public static void assertStatus(List<Pet> pets, Status status) {
+        pets.forEach(pet -> {
+            assertThat(pet.getStatus(), equalTo(status));
+        });
     }
 }

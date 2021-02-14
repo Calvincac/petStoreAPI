@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import pojo.Pet;
 import pojo.Status;
 import service.PetService;
+
+import static asserters.PetAsserters.assertStatus;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -46,6 +48,7 @@ public class GetPetTests extends PetService {
         addPet(expectedPet);
         List<Pet> pets = retrievePetByStatus(PetStoreTestData.AVAILABLE_STATUS.toString());
         assertThat(pets.isEmpty(), is(false));
+        assertStatus(pets, Status.AVAILABLE);
     }
 
     @Test
@@ -54,6 +57,7 @@ public class GetPetTests extends PetService {
         addPet(expectedPet);
         List<Pet> pets = retrievePetByStatus(PetStoreTestData.PENDING_STATUS.toString());
         assertThat(pets.isEmpty(), is(false));
+        assertStatus(pets, Status.PENDING);
     }
 
     @Test
@@ -62,6 +66,7 @@ public class GetPetTests extends PetService {
         addPet(expectedPet);
         List<Pet> pets = retrievePetByStatus(PetStoreTestData.SOLD_STATUS.toString());
         assertThat(pets.isEmpty(), is(false));
+        assertStatus(pets, Status.SOLD);
     }
 
     @Test
