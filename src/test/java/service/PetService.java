@@ -4,7 +4,6 @@ import client.PetClient;
 import io.restassured.response.Response;
 import pojo.Pet;
 
-import java.io.IOException;
 import java.util.List;
 
 

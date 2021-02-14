@@ -7,10 +7,9 @@ import resources.Utils;
 
 import static io.restassured.RestAssured.given;
 
-public class PetClient implements AbstractRequest{
+public class PetClient {
     Utils utils = new Utils();
 
-    @Override
     public Response postPet(Pet pet) {
         return  given()
                 .spec(utils.requestSpecification())
@@ -21,7 +20,6 @@ public class PetClient implements AbstractRequest{
                 .post(PetStoreResources.PET.getResource());
     }
 
-    @Override
     public Response deletePet(Long petId) {
         return  given()
                 .spec(utils.requestSpecification())
@@ -31,7 +29,6 @@ public class PetClient implements AbstractRequest{
                 .delete(PetStoreResources.PET.getResource() + String.valueOf(petId));
     }
 
-    @Override
     public Response updatePet(Pet pet) {
         return  given()
                 .spec(utils.requestSpecification())
@@ -42,7 +39,6 @@ public class PetClient implements AbstractRequest{
                 .put(PetStoreResources.PET.getResource());
     }
 
-    @Override
     public Response getPet(Long petId) {
         return  given()
                 .spec(utils.requestSpecification())
