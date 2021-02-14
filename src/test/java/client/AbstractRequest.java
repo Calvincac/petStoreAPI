@@ -5,7 +5,7 @@ import pojo.Pet;
 
 public interface AbstractRequest {
     Response postPet(Pet pet);
-    Response deletePet(Integer petId);
+    Response deletePet(Long petId);
     Response updatePet();
-    Response getPet();
+    Response getPet(Long petId);
 }

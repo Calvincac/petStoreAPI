@@ -22,7 +22,7 @@ public class PetClient implements AbstractRequest{
     }
 
     @Override
-    public Response deletePet(Integer petId) {
+    public Response deletePet(Long petId) {
         return  given()
                 .spec(utils.requestSpecification())
                 .when()
@@ -37,7 +37,22 @@ public class PetClient implements AbstractRequest{
     }
 
     @Override
-    public Response getPet() {
-        return null;
+    public Response getPet(Long petId) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.PET.getResource() + String.valueOf(petId));
+    }
+
+    public Response getPetByStatus(String petStatus) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .queryParam("status", petStatus)
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.PET.getResource() + "findByStatus");
     }
 }

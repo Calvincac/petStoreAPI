@@ -11,7 +11,7 @@ import java.util.List;
 @ToString
 public class Pet {
 
-    private Integer id;
+    private Long id;
     private Category category;
     private String name;
     private List<String> photoUrls;

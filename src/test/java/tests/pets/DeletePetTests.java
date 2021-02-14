@@ -45,6 +45,6 @@ public class DeletePetTests extends PetService {
 
     @Test
     public void cannotDeleteAPetWithInvalidId() {
-        deleteAPetNotFound(0);
+        deleteAPetNotFound(0L);
     }
 }
