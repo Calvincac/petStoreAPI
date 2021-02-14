@@ -1,10 +1,7 @@
 package data;
 
 import com.github.javafaker.Faker;
-import pojo.Category;
-import pojo.Pet;
-import pojo.Status;
-import pojo.Tag;
+import pojo.*;
 
 import java.util.List;
 
@@ -26,5 +23,14 @@ public class DataBuilder {
         pet.setTags(List.of(tag));
         pet.setPhotoUrls(List.of(faker.company().url()));
         return pet;
+    }
+
+    public Order getOrderAllFields() {
+        Order order = new Order();
+        order.setId((long) faker.number().numberBetween(2,78989678));
+        order.setQuantity(faker.number().numberBetween(2,344334));
+        order.setStatus("placed");
+        order.setComplete(true);
+        return order;
     }
 }
