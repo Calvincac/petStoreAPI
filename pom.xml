@@ -91,7 +91,7 @@
         <version>2.19.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/java/suites/placeTestSuite.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/java/suites/petStoreRegression.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
