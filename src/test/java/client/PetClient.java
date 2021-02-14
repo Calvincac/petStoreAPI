@@ -32,8 +32,14 @@ public class PetClient implements AbstractRequest{
     }
 
     @Override
-    public Response updatePet() {
-        return null;
+    public Response updatePet(Pet pet) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .body(pet)
+                .when()
+                .log()
+                .all()
+                .put(PetStoreResources.PET.getResource());
     }
 
     @Override

@@ -71,4 +71,14 @@ public class PetService extends PetClient {
                 .jsonPath()
                 .getList(".", Pet.class);
     }
+
+    public Pet updateAPet(Pet pet) {
+        return  updatePet(pet)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .as(Pet.class);
+    }
 }
