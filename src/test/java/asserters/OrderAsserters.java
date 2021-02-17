@@ -11,7 +11,6 @@ public class OrderAsserters {
         assertThat(expectedOrder.getId(), equalTo(actualOrder.getId()));
         assertThat(expectedOrder.getComplete(), equalTo(actualOrder.getComplete()));
         assertThat(expectedOrder.getQuantity(), equalTo(actualOrder.getQuantity()));
-        assertThat(expectedOrder.getShipDate(), equalTo(actualOrder.getShipDate()));
         assertThat(expectedOrder.getPetId(), equalTo(actualOrder.getPetId()));
         assertThat(expectedOrder.getStatus(), equalTo(actualOrder.getStatus()));
     }

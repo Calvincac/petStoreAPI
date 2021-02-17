@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class StoreClient {
     Utils utils = new Utils();
 
-    public Response postOrder(Order order) {
+    public Response postOrder(Object order) {
         return  given()
                 .spec(utils.requestSpecification())
                 .body(order)

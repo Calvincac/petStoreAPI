@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class PetClient {
     Utils utils = new Utils();
 
-    public Response postPet(Pet pet) {
+    public Response postPet(Object pet) {
         return  given()
                 .spec(utils.requestSpecification())
                 .body(pet)
@@ -29,7 +29,7 @@ public class PetClient {
                 .delete(PetStoreResources.PET.getResource() + String.valueOf(petId));
     }
 
-    public Response updatePet(Pet pet) {
+    public Response updatePet(Object pet) {
         return  given()
                 .spec(utils.requestSpecification())
                 .body(pet)
