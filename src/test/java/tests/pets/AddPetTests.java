@@ -4,11 +4,11 @@ import data.DataBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Pet;
-import service.PetService;
+import service.BaseTest;
 
 import static asserters.PetAsserters.assertPet;
 
-public class AddPetTests extends PetService {
+public class AddPetTests extends BaseTest {
     private DataBuilder data = new DataBuilder();
     private Pet expectedPet;
 
@@ -19,42 +19,42 @@ public class AddPetTests extends PetService {
 
     @Test
     public void canCreateAPetAllFields() {
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
     @Test
     public void canCreateAPetWithoutCategory() {
         expectedPet.setCategory(null);
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
     @Test
     public void canCreateAPetWithoutName() {
         expectedPet.setName(null);
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
     @Test
     public void canCreateAPetWithoutTags() {
         expectedPet.setTags(null);
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
     @Test
     public void canCreateAPetWithoutStatus() {
         expectedPet.setStatus(null);
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
     @Test
     public void canCreateAPetWithoutPhotoUrls() {
         expectedPet.setPhotoUrls(null);
-        Pet petResponse = addPet(expectedPet);
+        Pet petResponse = petService.addPet(expectedPet);
         assertPet(expectedPet, petResponse);
     }
 
@@ -62,7 +62,7 @@ public class AddPetTests extends PetService {
     public void canAdd50PetsOneAfterAnother() {
         for (int i = 0; i < 50; i++) {
             Pet pet = data.getPetAllFields();
-            Pet petResponse = addPet(pet);
+            Pet petResponse = petService.addPet(pet);
             assertPet(pet, petResponse);
         }
     }

@@ -7,6 +7,7 @@
             <class name="tests.pets.DeletePetTests"></class>
             <class name="tests.pets.UpdatePetTests"></class>
             <class name="tests.pets.GetPetTests"></class>
+            <class name="tests.store.AddOrderTests"></class>
         </classes>
     </test>
 </suite>
