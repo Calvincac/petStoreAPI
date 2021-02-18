@@ -11,7 +11,7 @@
 
 
 # This template uses jdk8 for verifying and deploying images
-image: maven:3.3.9-jdk-8
+image: maven:3.6.3-jdk-11-slim
 
 
 test-job1:
