@@ -2,7 +2,7 @@ package resources;
 
 public enum PetStoreResources {
     PET("/pet/"),
-    ORDER("/store/order");;
+    ORDER("/store/order/");;
 
 
     private String resource;

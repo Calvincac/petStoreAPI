@@ -1,6 +1,5 @@
 package tests.pets;
 
-import data.DataBuilder;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,12 +12,11 @@ import static resources.Utils.getJsonPath;
 
 
 public class DeletePetTests extends BaseTest {
-    private DataBuilder data = new DataBuilder();
     private Pet expectedPet, petResponse;
 
     @BeforeMethod
     public void beforeMethod() {
-        expectedPet = data.getPetAllFields();
+        expectedPet = dataBuilder.getPetAllFields();
         petResponse = petService.addPet(expectedPet);
     }
 
@@ -31,7 +29,7 @@ public class DeletePetTests extends BaseTest {
     @Test
     public void canDelete10PetsOneAfterAnother() {
         for(int i=0; i<10; i++){
-            Pet pet = data.getPetAllFields();
+            Pet pet = dataBuilder.getPetAllFields();
             Pet petResponse = petService.addPet(pet);
             Response response = petService.deleteAPet(petResponse.getId());
             assertThat(getJsonPath(response, "message"), equalTo(petResponse.getId().toString()));

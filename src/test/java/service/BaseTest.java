@@ -1,5 +1,6 @@
 package service;
 
+import data.DataBuilder;
 import data.PetStoreTestData;
 import org.testng.annotations.AfterTest;
 import pojo.Pet;
@@ -9,6 +10,7 @@ import java.util.List;
 public class BaseTest {
     public PetService petService = new PetService();
     public StoreService storeService = new StoreService();
+    public DataBuilder dataBuilder = new DataBuilder();
 
     @AfterTest
     public void cleanUp() {

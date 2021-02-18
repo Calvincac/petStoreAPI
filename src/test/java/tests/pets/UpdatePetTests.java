@@ -1,7 +1,6 @@
 package tests.pets;
 
 import com.github.javafaker.Faker;
-import data.DataBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Pet;
@@ -14,13 +13,12 @@ import static asserters.PetAsserters.assertPet;
 
 public class UpdatePetTests extends BaseTest {
 
-    private DataBuilder data = new DataBuilder();
     private Pet pet;
     private Faker faker = new Faker();
 
     @BeforeMethod
     public void beforeMethod() {
-        pet = data.getPetAllFields();
+        pet = dataBuilder.getPetAllFields();
     }
 
     @Test

@@ -1,6 +1,5 @@
 package tests.store;
 
-import data.DataBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.IncorrectOrder;
@@ -15,14 +14,13 @@ import java.util.List;
 import static asserters.OrderAsserters.assertOrder;
 
 public class AddOrderTests extends BaseTest {
-    private DataBuilder data = new DataBuilder();
     private Order order;
     private Pet pet, petResponse;
 
     @BeforeMethod
     public void beforeMethod() {
-        order = data.getOrderAllFields();
-        pet = data.getPetAllFields();
+        order = dataBuilder.getOrderAllFields();
+        pet = dataBuilder.getPetAllFields();
         petResponse = petService.addPet(pet);
     }
 

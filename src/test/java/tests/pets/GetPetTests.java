@@ -1,6 +1,5 @@
 package tests.pets;
 
-import data.DataBuilder;
 import data.PetStoreTestData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,12 +17,11 @@ import static asserters.PetAsserters.assertPet;
 
 public class GetPetTests extends BaseTest {
 
-    private DataBuilder data = new DataBuilder();
     private Pet expectedPet;
 
     @BeforeMethod
     public void beforeMethod() {
-        expectedPet = data.getPetAllFields();
+        expectedPet = dataBuilder.getPetAllFields();
     }
 
     @Test

@@ -1,7 +1,6 @@
 package client;
 
 import io.restassured.response.Response;
-import pojo.Order;
 import resources.PetStoreResources;
 import resources.Utils;
 
@@ -18,5 +17,23 @@ public class StoreClient {
                 .log()
                 .all()
                 .post(PetStoreResources.ORDER.getResource());
+    }
+
+    public Response getAnOrder(String orderId) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.ORDER.getResource() + orderId);
+    }
+
+    public Response deleteAnOrder(String orderId) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .delete(PetStoreResources.ORDER.getResource() + orderId);
     }
 }

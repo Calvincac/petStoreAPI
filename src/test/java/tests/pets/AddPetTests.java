@@ -1,6 +1,5 @@
 package tests.pets;
 
-import data.DataBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Pet;
@@ -9,12 +8,11 @@ import service.BaseTest;
 import static asserters.PetAsserters.assertPet;
 
 public class AddPetTests extends BaseTest {
-    private DataBuilder data = new DataBuilder();
     private Pet expectedPet;
 
     @BeforeMethod
     public void beforeMethod() {
-        expectedPet = data.getPetAllFields();
+        expectedPet = dataBuilder.getPetAllFields();
     }
 
     @Test
@@ -61,7 +59,7 @@ public class AddPetTests extends BaseTest {
     @Test
     public void canAdd50PetsOneAfterAnother() {
         for (int i = 0; i < 50; i++) {
-            Pet pet = data.getPetAllFields();
+            Pet pet = dataBuilder.getPetAllFields();
             Pet petResponse = petService.addPet(pet);
             assertPet(pet, petResponse);
         }
