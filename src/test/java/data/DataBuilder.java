@@ -33,4 +33,17 @@ public class DataBuilder {
         order.setComplete(true);
         return order;
     }
+
+    public User getUserAllFields() {
+        User user = new User();
+        user.setId((long) faker.number().numberBetween(2,78989678));
+        user.setEmail(faker.internet().emailAddress());
+        user.setFirstName(faker.name().firstName());
+        user.setLastName(faker.name().lastName());
+        user.setUsername(faker.name().username());
+        user.setPassword(faker.internet().password());
+        user.setPhone(faker.phoneNumber().phoneNumber());
+        user.setUserStatus(faker.number().randomDigitNotZero());
+        return user;
+    }
 }

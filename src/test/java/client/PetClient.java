@@ -1,14 +1,11 @@
 package client;
 
 import io.restassured.response.Response;
-import pojo.Pet;
 import resources.PetStoreResources;
-import resources.Utils;
 
 import static io.restassured.RestAssured.given;
 
-public class PetClient {
-    Utils utils = new Utils();
+public class PetClient extends BaseClient{
 
     public Response postPet(Object pet) {
         return  given()

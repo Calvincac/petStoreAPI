@@ -2,12 +2,10 @@ package client;
 
 import io.restassured.response.Response;
 import resources.PetStoreResources;
-import resources.Utils;
 
 import static io.restassured.RestAssured.given;
 
-public class StoreClient {
-    Utils utils = new Utils();
+public class StoreClient extends BaseClient{
 
     public Response postOrder(Object order) {
         return  given()

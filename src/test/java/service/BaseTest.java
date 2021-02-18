@@ -10,6 +10,7 @@ import java.util.List;
 public class BaseTest {
     public PetService petService = new PetService();
     public StoreService storeService = new StoreService();
+    public UserService userService = new UserService();
     public DataBuilder dataBuilder = new DataBuilder();
 
     @AfterTest

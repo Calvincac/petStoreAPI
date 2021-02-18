@@ -2,7 +2,7 @@ package tests.store;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pojo.IncorrectOrder;
+import incorrect.IncorrectOrder;
 import pojo.Order;
 import pojo.Pet;
 import service.BaseTest;
