@@ -8,6 +8,8 @@
             <class name="tests.pets.UpdatePetTests"></class>
             <class name="tests.pets.GetPetTests"></class>
             <class name="tests.store.AddOrderTests"></class>
+            <class name="tests.store.GetOrderTests"></class>
+            <class name="tests.store.DeleteOrderTests"></class>
         </classes>
     </test>
 </suite>
