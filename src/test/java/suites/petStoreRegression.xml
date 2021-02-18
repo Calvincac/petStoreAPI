@@ -10,6 +10,7 @@
             <class name="tests.store.AddOrderTests"></class>
             <class name="tests.store.GetOrderTests"></class>
             <class name="tests.store.DeleteOrderTests"></class>
+            <class name="tests.users.AddUserTests"></class>
         </classes>
     </test>
 </suite>

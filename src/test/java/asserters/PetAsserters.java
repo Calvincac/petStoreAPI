@@ -26,7 +26,7 @@ public class PetAsserters {
     }
 
     public static void assertTags(List<Tag> expectedTags, List<Tag> actualTags) {
-        for(int i=0; i<expectedTags.size();i++) {
+        for(int i=0; i<expectedTags.size(); i++) {
             assertThat(expectedTags.get(i).getId(), equalTo(actualTags.get(i).getId()));
             assertThat(expectedTags.get(i).getName(), equalTo(actualTags.get(i).getName()));
         }
