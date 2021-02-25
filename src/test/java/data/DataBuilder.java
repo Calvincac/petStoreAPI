@@ -18,7 +18,7 @@ public class DataBuilder {
         category.setName(faker.name().firstName());
         pet.setCategory(category);
         Tag tag = new Tag();
-        tag.setId(Integer.parseInt(faker.number().digit()));
+        tag.setId((long) faker.number().numberBetween(2,78989678));
         tag.setName(faker.name().lastName());
         pet.setTags(List.of(tag));
         pet.setPhotoUrls(List.of(faker.company().url()));
