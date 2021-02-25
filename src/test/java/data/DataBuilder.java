@@ -14,7 +14,7 @@ public class DataBuilder {
         pet.setName(faker.funnyName().name());
         pet.setId((long) faker.number().numberBetween(2,78989678));
         Category category = new Category();
-        category.setId(Integer.parseInt(faker.number().digit()));
+        category.setId((long) faker.number().numberBetween(2,78989678));
         category.setName(faker.name().firstName());
         pet.setCategory(category);
         Tag tag = new Tag();
