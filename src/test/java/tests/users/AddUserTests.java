@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.User;
-import service.BaseTest;
+import resources.BaseTest;
 
 public class AddUserTests extends BaseTest {
 

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import incorrect.IncorrectOrder;
 import pojo.Order;
 import pojo.Pet;
-import service.BaseTest;
+import resources.BaseTest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

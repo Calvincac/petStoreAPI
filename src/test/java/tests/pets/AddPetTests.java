@@ -3,7 +3,7 @@ package tests.pets;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Pet;
-import service.BaseTest;
+import resources.BaseTest;
 
 import static asserters.PetAsserters.assertPet;
 

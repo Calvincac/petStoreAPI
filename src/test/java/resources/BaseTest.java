@@ -1,9 +1,12 @@
-package service;
+package resources;
 
 import data.DataBuilder;
 import data.PetStoreTestData;
 import org.testng.annotations.AfterTest;
 import pojo.Pet;
+import service.PetService;
+import service.StoreService;
+import service.UserService;
 
 import java.util.List;
 

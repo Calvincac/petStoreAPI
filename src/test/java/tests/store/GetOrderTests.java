@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Order;
 import pojo.Pet;
-import service.BaseTest;
+import resources.BaseTest;
 
 import static asserters.OrderAsserters.assertOrder;
 

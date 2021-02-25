@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.Pet;
 import pojo.Status;
-import service.BaseTest;
+import resources.BaseTest;
 
 import java.util.List;
 
