@@ -1,7 +1,10 @@
 package client;
 
 import io.restassured.response.Response;
+import pojo.User;
 import resources.PetStoreResources;
+
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,5 +18,15 @@ public class UserClient extends BaseClient{
                 .log()
                 .all()
                 .post(PetStoreResources.USER.getResource());
+    }
+
+    public Response postUsersInAList(List<User> users) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .body(users)
+                .when()
+                .log()
+                .all()
+                .post(PetStoreResources.USER_LIST.getResource());
     }
 }

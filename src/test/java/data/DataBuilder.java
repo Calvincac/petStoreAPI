@@ -3,10 +3,13 @@ package data;
 import com.github.javafaker.Faker;
 import pojo.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataBuilder {
-    Faker faker = new Faker();
+    private Faker faker = new Faker();
+    private User user;
+    private List<User> users = new ArrayList<User>();
 
     public Pet getPetAllFields() {
         Pet pet = new Pet();
@@ -45,5 +48,13 @@ public class DataBuilder {
         user.setPhone(faker.phoneNumber().phoneNumber());
         user.setUserStatus(faker.number().randomDigitNotZero());
         return user;
+    }
+
+    public List<User> getListOfUsers(int numberOfUsers) {
+        for (int i = 0; i < numberOfUsers; i++) {
+            user = getUserAllFields();
+            users.add(user);
+        }
+        return users;
     }
 }

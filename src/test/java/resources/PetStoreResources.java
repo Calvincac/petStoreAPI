@@ -3,6 +3,7 @@ package resources;
 public enum PetStoreResources {
     PET("/pet/"),
     ORDER("/store/order/"),
+    USER_LIST("/user/createWithList/"),
     USER("/user/");
 
 
