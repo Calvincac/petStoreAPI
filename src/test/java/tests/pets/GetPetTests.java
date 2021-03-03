@@ -72,10 +72,4 @@ public class GetPetTests extends BaseTest {
         List<Pet> pets = petService.retrievePetByStatus(PetStoreTestData.UNKNOWN_STATUS.toString());
         assertThat(pets.isEmpty(), is(true));
     }
-
-    @Test
-    public void cannotRetrieveAPetByNullStatus() {
-        List<Pet> pets = petService.retrievePetByStatus(null);
-        assertThat(pets.isEmpty(), is(true));
-    }
 }
