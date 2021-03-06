@@ -47,4 +47,14 @@ public class UserClient extends BaseClient{
                 .all()
                 .delete(PetStoreResources.USER.getResource() + username);
     }
+
+    public Response putUser(Object user, String username) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .body(user)
+                .when()
+                .log()
+                .all()
+                .put(PetStoreResources.USER.getResource() + username);
+    }
 }

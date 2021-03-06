@@ -97,4 +97,14 @@ public class UserService extends UserClient {
                 .extract()
                 .response();
     }
+
+    public Response updateUser(Object user, String username) {
+        return  putUser(user, username)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .response();
+    }
 }
