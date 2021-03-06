@@ -22,5 +22,4 @@ public class AddUserWithListTests extends BaseTest {
         userService.addUsersInAList(List.of());
     }
 
-
 }
