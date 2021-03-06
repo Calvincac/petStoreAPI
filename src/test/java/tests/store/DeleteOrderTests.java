@@ -10,17 +10,13 @@ public class DeleteOrderTests extends BaseTest {
     private Order order, createdOrder;
     private Pet pet, petResponse;
 
-    @BeforeMethod
-    public void beforeMethod() {
+    @Test
+    public void canDeleteAnOrder() {
         order = dataBuilder.getOrderAllFields();
         pet = dataBuilder.getPetAllFields();
         petResponse = petService.addPet(pet);
         order.setPetId(petResponse.getId());
         createdOrder = storeService.createAnOrder(order);
-    }
-
-    @Test
-    public void canDeleteAnOrder() {
         storeService.deleteOrder(createdOrder.getId().toString());
     }
 

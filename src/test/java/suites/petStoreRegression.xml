@@ -13,6 +13,8 @@
             <class name="tests.users.AddUserTests"></class>
             <class name="tests.users.AddUserWithListTests"></class>
             <class name="tests.users.GetUsersTests"></class>
+            <class name="tests.users.DeleteUsersTests"></class>
+            <class name="tests.users.UpdateUserTests"></class>
         </classes>
     </test>
 </suite>

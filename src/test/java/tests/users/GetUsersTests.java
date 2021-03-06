@@ -1,6 +1,5 @@
 package tests.users;
 
-import asserters.UserAsserters;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.User;
@@ -11,13 +10,9 @@ import static asserters.UserAsserters.assertUser;
 public class GetUsersTests extends BaseTest {
     private User user;
 
-    @BeforeMethod
-    public void beforeMethod() {
-        user = dataBuilder.getUserAllFields();
-    }
-
     @Test
     public void canRetrieveUserByUserName() {
+        user = dataBuilder.getUserAllFields();
         userService.addAnUser(user);
         User retrievedUser = userService.retrieveUserByUserName(user.getUsername());
         assertUser(user, retrievedUser);

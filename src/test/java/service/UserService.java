@@ -67,4 +67,34 @@ public class UserService extends UserClient {
                 .extract()
                 .response();
     }
+
+    public Response deleteUserByUsername(String username) {
+        return  deleteUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .response();
+    }
+
+    public Response deleteUserByUsernameNotFound(String username) {
+        return  deleteUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(404)
+                .extract()
+                .response();
+    }
+
+    public Response deleteUserByUsernameError(String username) {
+        return  deleteUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(405)
+                .extract()
+                .response();
+    }
 }

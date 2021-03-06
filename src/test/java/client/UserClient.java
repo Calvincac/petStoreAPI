@@ -38,4 +38,13 @@ public class UserClient extends BaseClient{
                 .all()
                 .get(PetStoreResources.USER.getResource() + username);
     }
+
+    public Response deleteUserByUserName(String username) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .delete(PetStoreResources.USER.getResource() + username);
+    }
 }
