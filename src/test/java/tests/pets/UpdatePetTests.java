@@ -14,7 +14,6 @@ import static asserters.PetAsserters.assertPet;
 public class UpdatePetTests extends BaseTest {
 
     private Pet pet;
-    private Faker faker = new Faker();
 
     @BeforeMethod
     public void beforeMethod() {

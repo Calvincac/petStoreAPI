@@ -29,4 +29,13 @@ public class UserClient extends BaseClient{
                 .all()
                 .post(PetStoreResources.USER_LIST.getResource());
     }
+
+    public Response getUserByUserName(String username) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.USER.getResource() + username);
+    }
 }

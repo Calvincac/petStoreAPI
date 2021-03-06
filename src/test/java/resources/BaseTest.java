@@ -1,5 +1,6 @@
 package resources;
 
+import com.github.javafaker.Faker;
 import data.DataBuilder;
 import service.PetService;
 import service.StoreService;
@@ -10,4 +11,5 @@ public class BaseTest {
     public StoreService storeService = new StoreService();
     public UserService userService = new UserService();
     public DataBuilder dataBuilder = new DataBuilder();
+    public Faker faker = new Faker();
 }

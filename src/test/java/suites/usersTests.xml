@@ -5,6 +5,7 @@
         <classes>
             <class name="tests.users.AddUserTests"></class>
             <class name="tests.users.AddUserWithListTests"></class>
+            <class name="tests.users.GetUsersTests"></class>
         </classes>
     </test>
 </suite>

@@ -37,4 +37,34 @@ public class UserService extends UserClient {
                 .extract()
                 .response();
     }
+
+    public User retrieveUserByUserName(String username) {
+        return  getUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .as(User.class);
+    }
+
+    public Response retrieveUserByUserNameNotFound(String username) {
+        return  getUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(404)
+                .extract()
+                .response();
+    }
+
+    public Response retrieveUserByUserNameError(String username) {
+        return  getUserByUserName(username)
+                .then()
+                .log()
+                .all()
+                .statusCode(405)
+                .extract()
+                .response();
+    }
 }
