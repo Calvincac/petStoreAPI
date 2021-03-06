@@ -57,4 +57,24 @@ public class UserClient extends BaseClient{
                 .all()
                 .put(PetStoreResources.USER.getResource() + username);
     }
+
+    public Response userLogin(String username, String password) {
+        return  given()
+                .spec(utils.requestSpecification())
+                .queryParam("password", password)
+                .queryParam("username", username)
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.USER_LOGIN.getResource());
+    }
+
+    public Response userLogout() {
+        return  given()
+                .spec(utils.requestSpecification())
+                .when()
+                .log()
+                .all()
+                .get(PetStoreResources.USER_LOGOUT.getResource());
+    }
 }

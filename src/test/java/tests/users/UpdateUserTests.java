@@ -56,6 +56,12 @@ public class UpdateUserTests extends BaseTest {
         updateAndAssertUser(user);
     }
 
+    @Test
+    public void canUpdateUserStatus() {
+        user.setUserStatus(faker.number().randomDigit());
+        updateAndAssertUser(user);
+    }
+
     private void updateAndAssertUser(User user) {
         userService.updateUser(user, user.getUsername());
         updatedUser = userService.retrieveUserByUserName(user.getUsername());

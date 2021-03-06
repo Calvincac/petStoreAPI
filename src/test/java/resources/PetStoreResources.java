@@ -4,6 +4,8 @@ public enum PetStoreResources {
     PET("/pet/"),
     ORDER("/store/order/"),
     USER_LIST("/user/createWithList/"),
+    USER_LOGIN("/user/login/"),
+    USER_LOGOUT("/user/logout/"),
     USER("/user/");
 
 

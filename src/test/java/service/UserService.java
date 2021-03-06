@@ -107,4 +107,34 @@ public class UserService extends UserClient {
                 .extract()
                 .response();
     }
+
+    public Response login(String username, String password) {
+        return  userLogin(username, password)
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .response();
+    }
+
+    public Response loginError(String username, String password) {
+        return  userLogin(username, password)
+                .then()
+                .log()
+                .all()
+                .statusCode(400)
+                .extract()
+                .response();
+    }
+
+    public Response logout() {
+        return  userLogout()
+                .then()
+                .log()
+                .all()
+                .statusCode(200)
+                .extract()
+                .response();
+    }
 }
